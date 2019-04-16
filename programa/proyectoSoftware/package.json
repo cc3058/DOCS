@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
-    "meteor-node-stubs": "^0.4.1"
+    "babel-runtime": "^6.26.0",
+    "meteor-node-stubs": "^0.4.1",
+    "vue": "^2.6.10",
+    "vue-meteor-tracker": "^2.0.0-beta.5",
+    "vue-tracker": "^1.1.3"
   },
   "meteor": {
     "mainModule": {
