@@ -1,5 +1,16 @@
 import { Accounts } from 'meteor/accounts-base';
 
+
+
+AccountsTemplates.configure({
+    // Behavior
+    confirmPassword: true,
+  
+    // Privacy Policy and Terms of Use
+    privacyUrl: 'privacy',
+    termsUrl: 'terms-of-use',
+});
+
 AccountsTemplates.addFields([
     {
       _id:'profession',
@@ -24,6 +35,7 @@ AccountsTemplates.addFields([
             value:'Other'
           
         }
-      ]
+      ],
+      required:true
     }
   ])
