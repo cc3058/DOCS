@@ -3,6 +3,8 @@ import './main.html';
 import { Accounts } from 'meteor/accounts-base';
 import '../lib/at_config.js';
 
+AccountsTemplates.logout();
+
 Template.body.helpers({
 	notes(){
 		return Notes.find();

@@ -1,12 +1,20 @@
 <head>
-  <title>IS</title>
+  <title>proyecto</title>
 </head>
 
 <body>
-  
+  {{> Dashboard}}
   {{> atForm}}
-   
+  
 </body>
+
+<template name="Dashboard">
+  {{#if isInRole 'Student'}}
+    <h1 class="page-tittle">Bienvenido estudiante</h1>
+  {{else}}
+    <p class="page-tittle">You must login</p>
+  {{/if}}
+</template>
 
 <template name="note">
     <li class="collection-item">{{text}}
