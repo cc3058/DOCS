@@ -1,0 +1,118 @@
+<head>
+  <title>ISProyecto</title>
+</head>
+
+<body>
+  {{>mainViews}}
+</body>
+
+
+<template name="mainViews">
+  {{#if getPivot}}
+    {{>logInView}}
+     <!--Botones-->
+     <p></p>
+    <button class="logIn">log in</button>
+    <button class="signIn">Sign in</button>
+    <button class="forgot">Forgot inf.</button>
+  {{else}}
+    {{>SignInView}}
+    <!--botones-->
+    <p></p>
+    <button class="forgot">Forgot inf.</button>
+    <button class="register">Register</button>
+    <button class="logInSI">Log In</button>
+  {{/if}}
+</template>
+
+<template name="buttonsRoutes">
+
+</template>
+
+
+<template name="logInView">
+  <form  class="form-register">
+    <h1 id="titulo">Log In</h1>
+    <!--mail-->
+    <div id="addModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingrese su correo</h3>
+        <form class="add-form">
+          <input id="emailTxtLI" type="email" name="emailTxt" placeholder="example@holiqueonda.com">
+        </form>
+      </div>
+    </div>
+    <!--contraseña-->
+    <div id="addModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingrese su contraseña</h3>
+        <form class="add-form">
+          <input id="passwordTxtLI" type="password" name="passwordTxt" placeholder="**********">
+        </form>
+      </div>
+    </div>
+  </form> 
+</template>
+
+<template name="SignInView">
+  <form>
+    <h3>Sign In</h3>
+    <!--mail-->
+    <div id="addModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingrese su correo</h3>
+        <form class="add-form">
+          <input id="emailTxtSI" type="email" name="emailTxtSI" placeholder="example@holiqueonda.com">
+        </form>
+      </div>
+    </div>
+    <!--contraseña-->
+    <div>
+      <div>
+        <h3>Ingrese su contraseña</h3>
+        <form>
+          <input id="passwordTxtSI" type="password" name="passwordSI" placeholder="**********">
+        </form>
+      </div>
+    </div>
+    <!--nombre-->
+    <div>
+      <div>
+        <h3>Nombre</h3>
+        <form class="add-form">
+          <input id="nameTxt" type="text" name="nameTxt" placeholder="Nombre">
+        </form>
+      </div>
+    </div>
+    <!--apellido-->
+    <div>
+     <div>
+        <h3>Apellido</h3>
+        <form>
+          <input id="lastNameTxt" type="text" name="lastNameTxt" placeholder="Apellido">
+        </form>
+      </div>
+    </div>
+    <!--dpi-->
+    <div>
+      <div>
+        <h3>DPI</h3>
+        <form>
+          <input id="dpiTxt" type="text" name="dpiTxt" placeholder="dpi">
+        </form>
+      </div>
+    </div>
+    <!--tipo-->
+    <div>
+      <div>
+        <h3>¿qué tipo de usuario es?</h3>
+        <select id ="professionSel" class="profession">
+          <option value="student">estudiante</option>
+          <option value="attendant">encargado</option>
+          <option value="admin">administrador</option>
+          <option value="voluntary">voluntario</option>
+        </select>      
+      </div>
+    </div>
+  </form>
+</template>
