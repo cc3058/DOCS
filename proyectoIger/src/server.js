@@ -9,10 +9,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-const { url } = require('./config/database');
+const { url } = require('./config/database.js');
 
 mongoose.connect(url, {
-    useNewUrlParser: true
+    
 })
 
 require('./config/passport')(passport);
