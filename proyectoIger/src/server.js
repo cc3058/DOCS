@@ -15,7 +15,7 @@ mongoose.connect(url, {
     useNewUrlParser: true
 })
 
-//require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 //settings
 //the aplication will have a port if it is predifined it will
