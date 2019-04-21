@@ -6,6 +6,10 @@ router.get('/signup', function(req, res) {
 	res.render('signup');
 });
 
+router.get('/reunion', function(req, res) {
+	res.render('reunion');
+});
+
 router.post('/signup', passport.authenticate('local-signup', {
 	failureRedirect : '/auth/signup',
 	failureFlash : false // allow flash messages
@@ -24,7 +28,7 @@ router.get('/login', function(req, res, next)  {
 
 router.post('/login', passport.authenticate('local-login', {
 	failureRedirect : '/auth/login',
-	failureFlash : false 
+	failureFlash : false
 }), function(req, res, next)  {
 	res.redirect('/')
 });

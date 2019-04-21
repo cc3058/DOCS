@@ -1,0 +1,30 @@
+    <% include ./partials/head.ejs %>
+    <title>Reunion</title>
+  </head>
+  <body class = "login">
+
+  <div class = "container">
+  <div class="card-body">
+      <div >
+        Fecha  <input id="date" type="date" class = "form-control" required autofocus>
+      </div>
+
+      <div>
+        Hora  <input id="time" type="time" class = "form-control">
+      </div>
+
+      <div>
+        Lugar  <input id="lugar" type="text" class = "form-control">
+      </div>
+
+      <div>
+        <button type = "submit" class = "btn btn-outline-secondary btn-lg"> Enviar </button>
+      </div>
+
+      <div id = "app">
+        {{message}}
+      </div>
+  </div>
+  </div>
+  </body>
+</html>
