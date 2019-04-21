@@ -7,6 +7,7 @@
       <% if (user) {%>
         <% if (user.role === 'member') {%>
           <li><a href="/member">Administrador</a></li>
+          <li><a href="/schedule">Horario</a></li>
         <%} else if (user.role === 'author') {%>
           <li><a href="/author">Estudiante</a></li>
         <%}%>

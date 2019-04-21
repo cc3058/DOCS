@@ -15,6 +15,14 @@ router.get('/member', function(req, res, next) {
     }
 })
 
+router.get('/schedule', function(req, res, next) {
+    if (req.isAuthenticated() && req.user.isAdmin()) {
+        res.render('schedule')
+    } else {
+        res.sendStatus(403) // Forbidden
+    }
+})
+
 router.get('/author', function(req, res, next) {
     if (req.isAuthenticated() && req.user.isStudent()) {
         res.render('author')
