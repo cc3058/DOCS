@@ -1,0 +1,47 @@
+ <% include ./partials/head.ejs %>
+    <title>schedule</title>
+</head>
+<body class="login">
+    <div class="container"> 
+        <div class="card-body">
+            <div class="card-body">
+                <% include ./partials/navbar.ejs %>
+                <h1>Horarios</h1>
+                <form method="POST">
+                <ul>
+                    <li>Fecha</li>
+                    <div class="form-group">
+                        <input style="color: #ffffff; background-color: #003366" type="Date" name='Date' placeholder='fecha' class="form-control" required>
+                    </div>
+                    <li>Hora</li>
+                    <div class="form-group">
+                        <input style="color: #ffffff; background-color: #003366" type="Hour" name='Hour' placeholder='Hora' class="form-control" required>
+                    </div>
+                    <li>Lugar</li>
+                    <div class="form-group">
+                        <input style="color: #ffffff; background-color: #003366" type='Place' name='Place' placeholder='lugar' class="form-control" required>
+                    </div>
+                    <li>Descripcion</li>
+                    <div class="form-group">
+                        <input style="color: #ffffff; background-color: #003366" type='description' name='description' placeholder='descripcion' class="form-control" required>
+                    </div>
+                    <li>Tema</li>
+                    <div class="form-group">
+                        <input style="color: #ffffff; background-color: #003366" type='topic' name='topic' placeholder='Tema' class="form-control" required>
+                    </div>
+                    <li>Tema a tratar</li>
+                    <div class="form-group">
+                        <input style="color: #ffffff; background-color: #003366" type='topic to talk about' name='topic to talk about' placeholder='tema a tratar' class="form-control" required>
+                    </div>
+                    <li>Tema a reforzar</li>
+                    <div class="form-group">
+                        <input style="color: #ffffff; background-color: #003366" type='topic to practice' name='tema to practice' placeholder='tema a reforzar' class="form-control" required>
+                    </div>
+                    <button style="color: #f0f8ff; background-color: #003366"  type="submit" class="btn btn-outline-secondary btn-lg">Enviar</button>
+                </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
