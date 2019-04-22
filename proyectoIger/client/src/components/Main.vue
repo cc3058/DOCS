@@ -1,6 +1,5 @@
 <template>
-  <div class="buttons">
-  <h1>Bachillerato Digital</h1>
+  <div class="buttins">
     <ul>
      <li><button class="button button-login">Log In</button></li>
     </ul>
@@ -24,23 +23,14 @@ export default {
 
 .button {
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 2px;
 }
 
 .button-login {
-  background-color: navy;
-  color: white;
-  font-size: 20px;
-  width: 120px;
-  height:50px;
+  background-color: green;
 }
 .button-register {
   background-color: orange;
-  color: white;
-  font-size: 20px;
-  width: 120px;
-  height:50px;
 }
 
 h3 {
