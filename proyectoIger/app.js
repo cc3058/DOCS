@@ -15,7 +15,6 @@ const DB_URI = "mongodb://localhost:27017/igerDB" // mongodb://domain:port/datab
 // Connect to MongoDB
 mongoose.connect(DB_URI)
 
-// CONNECTION EVENTS
 mongoose.connection.once('connected', function() {
     console.log("Database connected to " + DB_URI)
 })
@@ -26,7 +25,6 @@ mongoose.connection.once('disconnected', function() {
     console.log("Database disconnected")
 })
 
-// If Node's process ends, close the MongoDB connection
 process.on('SIGINT', function() {
     mongoose.connection.close(function() {
         console.log("Database disconnected through app termination")
