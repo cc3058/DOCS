@@ -1,5 +1,6 @@
 <template>
-  <div class="buttins">
+  <div class="buttons">
+  <h1>Registro</h1>
     <ul>
      <li><button class="button button-login">Log In</button></li>
     </ul>
@@ -11,7 +12,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Register',
   props: {
     msg: String
   }
