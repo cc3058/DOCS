@@ -8,6 +8,10 @@
 <br>
 <input v-model = "type" type = "text" name = "type" placeholder = "tipo de usuario"/>
 <br>
+<div class = "error" v-html ="error">
+
+</div>
+
 <button @click = "signup"> Signup </button>
 </div>
 </template>
@@ -19,16 +23,20 @@ export default {
     return {
       email: '',
       password: '',
-      type: ''
+      type: '',
+      error: null
     }
   },
   methods: {
     async signup () {
-      const response = await AuthenticationService.signup({
-        email: this.email,
-        password: this.password
-      })
-      console.log(response.data)
+      try {
+        await AuthenticationService.signup({
+          email: this.email,
+          password: this.password
+        })
+      } catch (error) {
+        this.error = error.response.data.error
+      }
     }
   }
 }
@@ -36,5 +44,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.error {
+  color: red;
+}
 </style>
