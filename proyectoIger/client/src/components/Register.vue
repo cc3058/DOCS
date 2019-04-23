@@ -1,22 +1,20 @@
 <template>
-  <div class="hello">
-        <h1>{{ msg }}</h1>
-        <a style="cursor: pointer; text-decoration: underline" v-on:click="navigate()">Navigate to LogIn</a>
-    </div>
+  <div class="buttons">
+  <h1>Registro</h1>
+    <ul>
+     <li><button class="button button-login">Log In</button></li>
+    </ul>
+    <ul>
+     <li><button class="button button-register">Register</button></li>
+    </ul>
+  </div>
 </template>
 
 <script>
-  import router from '../main.js'
-  export default {
-    name: 'Register',
-    props: {
-      msg: 'nigga u kidding'
-    },
-    methods: {
-      navigate(){
-        router.push({ name: "LogIn"});
-      }
-    }
+export default {
+  name: 'Register',
+  props: {
+    msg: String
   }
 </script>
 

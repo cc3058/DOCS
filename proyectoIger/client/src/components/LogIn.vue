@@ -1,8 +1,10 @@
 <template>
-  <div class="hello">
-        <h1>{{ msg }}</h1>
-        <router-link to="/register">Navigate to Register</router-link>
-    </div>
+  <div class="buttons">
+  <h1>Log In</h1>
+    <ul>
+     <li><button class="button button-ya">yaaaa</button></li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -22,11 +24,8 @@ export default {
   border-radius: 2px;
 }
 
-.button-login {
+.button-ya {
   background-color: green;
-}
-.button-register {
-  background-color: orange;
 }
 
 h3 {
