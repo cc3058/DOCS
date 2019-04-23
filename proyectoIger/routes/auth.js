@@ -36,7 +36,14 @@ router.get('/logout', function(req, res, next) {
 	res.redirect('/auth/login');
 });
 
+router.get('/reunion', function(req, res) {
+	res.render('reunion');
+});
 
+router.post('/reunion', function(req, res) {
+	const postBody = req.body;
+	console.log(postBody);
+});
 
 
 module.exports = router;
