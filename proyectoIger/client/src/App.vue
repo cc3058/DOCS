@@ -1,8 +1,5 @@
 <template>
-  <div id="app">
-    <img alt="IGER logo" src="./assets/logo_iger.png">
     <router-view></router-view>
-  </div>
 </template>
 
 <script>

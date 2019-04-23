@@ -1,5 +1,6 @@
 <template>
   <div class="buttons">
+  <img alt="IGER logo" src="./assets/logo_iger.png">
   <h1>Bachillerato Digital</h1>
     <ul>
      <li><button class="button button-login" v-on:click="goLogIn()">Log In</button></li>
