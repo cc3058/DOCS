@@ -1,0 +1,43 @@
+    <% include ./partials/head.ejs %>
+    <title>Reunion</title>
+  </head>
+  <body class = "login">
+
+  <div class = "container">
+  <div class="card-body">
+    <form  method="POST">
+      <div >
+        Fecha  <input name="fecha" type="date" class = "form-control" required autofocus>
+      </div>
+
+      <div>
+        Hora  <input name="hora" type="time" class = "form-control">
+      </div>
+
+      <div>
+        Lugar  <input name="lugar" type="text" class = "form-control">
+      </div>
+
+      <div>
+        Descripcion <input name="descripcion" type="text" class = "form-control">
+      </div>
+
+      <div>
+        Temas a Tratar <input name="temas" type="text" class = "form-control">
+      </div>
+
+      <div>
+        Temas a Reforzar <input name="reforzar" type="text" class = "form-control">
+      </div>
+
+
+
+      <div>
+        <button type = "submit" class = "btn btn-outline-secondary btn-lg"> Enviar </button>
+      </div>
+
+  </form>
+  </div>
+  </div>
+  </body>
+</html>

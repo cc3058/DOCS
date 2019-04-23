@@ -1,20 +1,28 @@
 <template>
   <div class="buttons">
+  <img alt="IGER logo" src="./assets/logo_iger.png">
   <h1>Bachillerato Digital</h1>
     <ul>
-     <li><button class="button button-login">Log In</button></li>
+     <li><button class="button button-login" v-on:click="goLogIn()">Log In</button></li>
     </ul>
     <ul>
-     <li><button class="button button-register">Register</button></li>
+     <li><button class="button button-register" v-on:click="goRegister()">Register</button></li>
     </ul>
   </div>
 </template>
 
 <script>
+
+import router from '../router'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    goLogIn() {router.push({ name: "LogIn" });},
+    goRegister() {router.push({ name: "Register" });}
   }
 }
 </script>

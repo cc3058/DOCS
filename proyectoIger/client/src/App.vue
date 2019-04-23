@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <img alt="IGER logo" src="./assets/logo_iger.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <router-view></router-view>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import LogIn from './components/LogIn.vue'
+import Register from './components/Register.vue'
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld, LogIn, Register
   }
 }
 </script>

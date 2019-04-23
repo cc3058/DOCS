@@ -1,19 +1,17 @@
 <template>
-  <div class="buttins">
+  <div class="buttons">
+  <h1>Log In</h1>
     <ul>
-     <li><button class="button button-login">Log In</button></li>
-    </ul>
-    <ul>
-     <li><button class="button button-register">Register</button></li>
+     <li><button class="button button-ya">yaaaa</button></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'LogIn',
   props: {
-    msg: String
+    msg: 'nigga dont know'
   }
 }
 </script>
@@ -26,11 +24,8 @@ export default {
   border-radius: 2px;
 }
 
-.button-login {
+.button-ya {
   background-color: green;
-}
-.button-register {
-  background-color: orange;
 }
 
 h3 {
