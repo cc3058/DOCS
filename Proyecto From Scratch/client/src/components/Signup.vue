@@ -1,19 +1,28 @@
 <template>
-<div>
-<h1>Signup</h1>
+<v-layout column>
+  <v-flex xs6 offset-xs3>
+  <div class = "inner">
+    <div class = "white elevation-2">
+      <v-toolbar flat dense class = "blue">
+        <v-toolbar-title>Signup </v-toolbar-title>
+      </v-toolbar>
+      <div class = "pl-4 pr-4 pt-2 pb-2">
+      <v-text-field label = "Email" v-model="email"></v-text-field>
+      <br>
+      <v-text-field label = "Contraseña" v-model = "password" type = "password"></v-text-field>
+      <br>
+      <v-text-field label = "Tipo de Usuario" v-model = "type"></v-text-field>
+      <br>
+      <div class = "error" v-html ="error"/>
+      <br>
+      <v-btn @click = "signup" class = "orange"> Signup </v-btn>
 
-<input v-model = "email" type = "email" name = "email" placeholder = "email"/>
-<br>
-<input v-model = "password" type = "password" name = "password" placeholder = "password"/>
-<br>
-<input v-model = "type" type = "text" name = "type" placeholder = "tipo de usuario"/>
-<br>
-<div class = "error" v-html ="error">
+      </div>
+      </div>
+      </div>
+  </v-flex>
+</v-layout>
 
-</div>
-
-<button @click = "signup"> Signup </button>
-</div>
 </template>
 
 <script>
@@ -47,4 +56,10 @@ export default {
 .error {
   color: red;
 }
+
+.inner {
+  display: table;
+  margin: 0 auto;
+}
+
 </style>
