@@ -1,19 +1,15 @@
 <template>
-  <div class="buttins">
-    <ul>
-     <li><button class="button button-login">Log In</button></li>
-    </ul>
-    <ul>
-     <li><button class="button button-register">Register</button></li>
-    </ul>
-  </div>
+  <div class="hello">
+        <h1>{{ msg }}</h1>
+        <router-link to="/register">Navigate to Register</router-link>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'LogIn',
   props: {
-    msg: String
+    msg: 'nigga dont know'
   }
 }
 </script>

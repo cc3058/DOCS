@@ -1,21 +1,23 @@
 <template>
-  <div class="buttins">
-    <ul>
-     <li><button class="button button-login">Log In</button></li>
-    </ul>
-    <ul>
-     <li><button class="button button-register">Register</button></li>
-    </ul>
-  </div>
+  <div class="hello">
+        <h1>{{ msg }}</h1>
+        <a style="cursor: pointer; text-decoration: underline" v-on:click="navigate()">Navigate to LogIn</a>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  import router from '../main.js'
+  export default {
+    name: 'Register',
+    props: {
+      msg: 'nigga u kidding'
+    },
+    methods: {
+      navigate(){
+        router.push({ name: "LogIn"});
+      }
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
