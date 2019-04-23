@@ -23,6 +23,14 @@ router.get('/schedule', function(req, res, next) {
     }
 })
 
+router.get('/schedule_viewer', function(req, res, next) {
+    if (req.isAuthenticated() && req.user.isAdmin()) {
+        res.render('schedule_viewer')
+    } else {
+        res.sendStatus(403) // Forbidden
+    }
+})
+
 router.get('/author', function(req, res, next) {
     if (req.isAuthenticated() && req.user.isStudent()) {
         res.render('author')
