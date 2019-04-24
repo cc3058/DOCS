@@ -1,7 +1,23 @@
 <template>
     <div class="hello">
+    <img src="../assets/logo.png">
         <h1>{{ msg }}</h1>
-        <a style="cursor: pointer; text-decoration: underline" v-on:click="navigate()">Navigate to Page1</a>
+
+        <v-flex xs6 offset-xs3>
+          <div class="inner">
+          <br>
+          <v-text-field label = "Email" v-model="email"></v-text-field>
+          <v-text-field label = "Contraseña" v-model="password" type="password"></v-text-field>
+          <v-text-field label = "Nombre"></v-text-field>
+          <br>
+          <v-select label="Tipo de usuario" :items="items" ></v-select>
+          <br>
+          <v-btn depressed dark class="orange font-weight-bold">Registrarme</v-btn>
+          <br>
+          </div>
+        </v-flex>
+        <br>
+        <a style="cursor: pointer; text-decoration: underline" v-on:click="navigate()">Regresar</a>
     </div>
 </template>
 
@@ -13,7 +29,11 @@
         name: 'Register',
         data () {
             return {
-                msg: 'Hey registrate'
+                msg: 'Registrar nueva cuenta',
+                email: '',
+                password: '',
+                type: '',
+                items:['Administrador','Estudiante','Encargado de círculo/Maestro']
             }
         },
         methods: {
@@ -49,5 +69,10 @@
 
     a {
         color: #42b983;
+    }
+
+    .inner {
+      display: table;
+      margin: 0 auto;
     }
 </style>

@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <v-toolbar app dark class="orange">
+      <v-toolbar-title class="headline text-uppercase">
+        <span class="font-weight-bold">Bachillerato Digital</span>
+      </v-toolbar-title>
+    </v-toolbar>
+
+    <v-content>
+      <router-view/>
+    </v-content>
   </div>
 </template>
 

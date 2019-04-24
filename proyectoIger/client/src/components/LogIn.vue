@@ -1,7 +1,19 @@
 <template>
     <div class="hello">
+    <img src="../assets/logo.png">
         <h1>{{ msg }}</h1>
-        <router-link to="/register">Navigate to Register</router-link>
+        <br>
+        <v-flex xs6 offset-xs3>
+          <div class="inner">
+          <v-text-field label = "Email" v-model="email"></v-text-field>
+          <br>
+          <v-text-field label = "Contraseña" v-model="password" type="password"></v-text-field>
+          <br>
+          <v-btn depressed dark class="orange font-weight-bold">Iniciar sesión</v-btn>
+          </div>
+        </v-flex>
+        <br>
+        <p>¿No tienes cuenta? <router-link to="/register">Registrarse</router-link></p>
     </div>
 </template>
 
@@ -10,7 +22,7 @@
         name: 'LogIn',
         data () {
             return {
-                msg: 'LogIn marik'
+                msg: 'Inicia sesión'
             }
         }
     }
@@ -33,5 +45,10 @@
 
     a {
         color: #42b983;
+    }
+
+    .inner {
+      display: table;
+      margin: 0 auto;
     }
 </style>
