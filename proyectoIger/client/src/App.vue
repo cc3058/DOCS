@@ -1,18 +1,13 @@
 <template>
-    <router-view></router-view>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <router-view/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import LogIn from './components/LogIn.vue'
-import Register from './components/Register.vue'
-
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld, LogIn, Register
-  }
+  name: 'App'
 }
 </script>
 
