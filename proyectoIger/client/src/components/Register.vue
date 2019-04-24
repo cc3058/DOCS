@@ -2,20 +2,21 @@
     <div class="hello">
     <img src="../assets/logo.png">
         <h1>{{ msg }}</h1>
-
-        <v-flex xs6 offset-xs3>
-          <div class="inner">
-          <br>
-          <v-text-field label = "Email" v-model="email"></v-text-field>
-          <v-text-field label = "Contraseña" v-model="password" type="password"></v-text-field>
-          <v-text-field label = "Nombre"></v-text-field>
-          <br>
-          <v-select label="Tipo de usuario" :items="items" ></v-select>
-          <br>
-          <v-btn depressed dark class="orange font-weight-bold">Registrarme</v-btn>
-          <br>
-          </div>
-        </v-flex>
+        <v-container fluid grid-list-xl>
+          <v-layout wrap align-center>
+            <div class="inner">
+            <br>
+            <v-text-field label = "Email" v-model="email"></v-text-field>
+            <v-text-field label = "Contraseña" v-model="password" type="password"></v-text-field>
+            <v-text-field label = "Nombre"></v-text-field>
+            <br>
+            <v-select class="drop-down-conf" label="Tipo de usuario" :items="items" ></v-select>
+            <br>
+            <v-btn depressed dark class="orange font-weight-bold" v-on:click="ingreso()">Registrarme</v-btn>
+            <br>
+            </div>
+          </v-layout>
+        </v-container>
         <br>
         <a style="cursor: pointer; text-decoration: underline" v-on:click="navigate()">Regresar</a>
     </div>
@@ -38,15 +39,21 @@
         },
         methods: {
             navigate() {
-                try {
+
+                router.push({ name: "LogIn" });
+            },
+            ingreso() {
+                /*try {
                 AuthenticationService.signup({
                 email: "preuba@gmail.com",
-                password: "12345"
+                password: "12345",
+                name: "juanito",
+                type: "Estudiante"
                 })
                 } catch (error) {
                     this.error = error.response.data.error
-                }
-                router.push({ name: "LogIn" });
+                }*/
+                router.push({name: "HomePage"});
             }
         }
     }
@@ -74,5 +81,9 @@
     .inner {
       display: table;
       margin: 0 auto;
+    }
+
+    .drop-down-conf {
+    margin-top: 0px;
     }
 </style>
