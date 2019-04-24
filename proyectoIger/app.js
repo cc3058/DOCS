@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
 const session = require('express-session');
@@ -42,6 +43,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 // Serve Static Files from /public
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 app.use(session({
     name: 'sessionId',
     secret: "iger",
@@ -63,6 +65,10 @@ app.use(session({
 }))
 // Passport Config
 require('./config/passport')(passport); // pass passport for configuration
+
+//Routes Config
+require('./routes')(app)
+
 // Passport init (must be after establishing the session above)
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions

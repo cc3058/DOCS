@@ -1,45 +1,37 @@
 <template>
-  <div class="buttons">
-  <h1>Log In</h1>
-    <ul>
-     <li><button class="button button-ya">yaaaa</button></li>
-    </ul>
-  </div>
+    <div class="hello">
+        <h1>{{ msg }}</h1>
+        <router-link to="/register">Navigate to Register</router-link>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'LogIn',
-  props: {
-    msg: 'nigga dont know'
-  }
-}
+    export default {
+        name: 'LogIn',
+        data () {
+            return {
+                msg: 'LogIn marik'
+            }
+        }
+    }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    h1, h2 {
+        font-weight: normal;
+    }
 
-.button {
-  border: none;
-  border-radius: 2px;
-}
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-.button-ya {
-  background-color: green;
-}
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
 
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+    a {
+        color: #42b983;
+    }
 </style>
