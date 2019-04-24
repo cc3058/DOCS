@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Page1 from '@/components/LogIn'
 import Page2 from '@/components/Register'
+import HomePage from '@/components/UserType'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
             path: '/register',
             name: 'Register',
             component: Page2
+        },
+        {
+          path: '/home',
+          name: 'HomePage',
+          component: HomePage
         }
     ]
 })
