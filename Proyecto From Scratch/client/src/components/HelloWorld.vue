@@ -10,6 +10,8 @@
         >
           Core Docs
         </a>
+
+        <a href="/#/signup"> signup </a>
       </li>
       <li>
         <a
