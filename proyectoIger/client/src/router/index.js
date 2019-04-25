@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Page1 from '@/components/LogIn'
 import Page2 from '@/components/Register'
-import HomePage from '@/components/UserType'
+import Student from '@/components/Estudiante'
+import Admin from '@/components/Admin'
+import Teacher from '@/components/Encargado'
 
 Vue.use(Router)
 
@@ -25,9 +27,19 @@ export default new Router({
             component: Page2
         },
         {
-          path: '/home',
+          path: '/student',
           name: 'HomePage',
-          component: HomePage
+          component: Student
+        },
+        {
+          path: '/admin',
+          name: 'HomePage2',
+          component: Admin
+        },
+        {
+          path: '/teacher',
+          name: 'HomePage3',
+          component: Teacher
         }
     ]
 })

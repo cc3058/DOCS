@@ -8,9 +8,9 @@
             <br>
             <v-text-field label = "Email" v-model="email"></v-text-field>
             <v-text-field label = "Contraseña" v-model="password" type="password"></v-text-field>
-            <v-text-field label = "Nombre"></v-text-field>
+            <v-text-field label = "Nombre" v-model="name"></v-text-field>
             <br>
-            <v-select class="drop-down-conf" label="Tipo de usuario" :items="items" ></v-select>
+            <v-select class="drop-down-conf" v-model="type" label="Tipo de usuario" :items="items" ></v-select>
             <br>
             <v-btn depressed dark class="orange font-weight-bold" v-on:click="ingreso()">Registrarme</v-btn>
             <br>
@@ -54,6 +54,11 @@
                     this.error = error.response.data.error
                 }*/
                 router.push({name: "HomePage"});
+                //estos son los datos pero idk como mandarlos a express
+                //this.email;
+                //this.password;
+                //this.type;
+                //this.name;
             }
         }
     }
