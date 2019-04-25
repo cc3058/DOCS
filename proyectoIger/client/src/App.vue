@@ -1,6 +1,7 @@
 <template>
-  <v-app>
-    <v-toolbar app>
+<v-app>
+  <div id="app">
+    <v-toolbar app dark class="orange">
       <v-toolbar-title class="headline text-uppercase">
         <span>Vuetify</span>
         <span class="font-weight-light">MATERIAL DESIGN</span>
@@ -18,7 +19,8 @@
     <v-content>
       <HelloWorld/>
     </v-content>
-  </v-app>
+  </div>
+</v-app>
 </template>
 
 <script>
