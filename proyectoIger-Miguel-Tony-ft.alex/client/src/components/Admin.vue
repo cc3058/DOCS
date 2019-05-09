@@ -1,8 +1,14 @@
 <template>
-    <div class="hello">
-    <h1>{{ msg }}</h1>
-    <router-view/>
-    </div>
+  <v-container>
+    <v-layout row wrap align-center justify-center>
+      <v-flex xs12>
+        <h1>{{ msg }}</h1>
+      </v-flex>
+      <v-flex xs12>
+        <router-view/>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 

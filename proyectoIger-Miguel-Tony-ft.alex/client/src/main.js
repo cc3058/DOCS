@@ -7,9 +7,11 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import BootstrapVue from '../node_modules/bootstrap-vue/dist/bootstrap-vue'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.use(Vuetify)
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 

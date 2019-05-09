@@ -1,12 +1,12 @@
 <template>
-    <div class="hello">
+  <v-container>
     <h1>{{ msg }}</h1>
-    <v-btn depressed dark class="orange font-weight-bold" v-on:click="nuevocirculo()">Crear círculo</v-btn>
-    <br>
-    <v-btn depressed dark class="orange font-weight-bold" v-on:click="asignar()">Asignar miembros a círculo</v-btn>
-    <br>
-    <v-btn depressed dark class="grey font-weight-bold" v-on:click="salir()">Salir</v-btn>
-    </div>
+        <v-btn round depressed dark class="orange font-weight-bold text-xs-left" v-on:click="nuevocirculo()">Crear círculo</v-btn>
+        <br>
+        <v-btn round depressed dark class="orange font-weight-bold text-xs-left" v-on:click="asignar()">Asignar miembros a círculo</v-btn>
+        <br>
+        <v-btn round depressed dark class="grey font-weight-bold text-xs-left" v-on:click="salir()">Salir</v-btn>
+  </v-container>
 </template>
 
 

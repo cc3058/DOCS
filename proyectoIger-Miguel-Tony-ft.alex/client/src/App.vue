@@ -8,13 +8,17 @@
     </v-toolbar>
 
     <v-content>
+    <v-responsive>
       <router-view/>
+    </v-responsive>
     </v-content>
   </div>
 </v-app>
 </template>
 
 <script>
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 export default {
   name: 'App'
 }

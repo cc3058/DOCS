@@ -6,12 +6,10 @@
         <v-flex xs6 offset-xs3>
           <div class="inner">
           <v-text-field label = "Email" v-model="email"></v-text-field>
-          <input type="text" required name="email" v-model="email">
           <br>
           <v-text-field label = "Contraseña" v-model="password" type="password"></v-text-field>
-          <input type="text" required name="email" v-model="password">
           <br>
-          <v-btn depressed dark class="orange font-weight-bold" v-on:click="login()">Iniciar sesión</v-btn>
+          <v-btn depressed dark class="orange font-weight-bold" v-on:click="login()" >Iniciar sesión</v-btn>
           </div>
         </v-flex>
         <br>
@@ -34,14 +32,22 @@ import router from '../router'
         },
         methods: {
         async login() {
-          router.push({name: "StudentHome"});
+          //router.push({name: "StudentHome"});
           try {
-            await AuthenticationService.login({
+            const response = await AuthenticationService.login({
               email: this.email,
               password: this.password
             })
+              console.log(response.data)
+              if (response.data == 'Administrador'){
+                router.push({name: "AdminHome"});
+              } else if (response.data == 'Estudiante'){
+                router.push({name: "StudentHome"});
+              } else if (response.data == 'Encargado de círculo/Maestro'){
+                router.push({name: "TeachHome"});
+              }
           } catch (error){
-            this.error = error.response.data.error
+            //this.error = error.response.data.error
           }
           //estas son las variables que hay que pasar
           //this.email;

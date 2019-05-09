@@ -6,22 +6,19 @@
           <v-layout wrap align-center>
             <div class="inner">
             <br>
-            <v-text-field label = "Email" v-model="email"></v-text-field>
-            <span style="color:#FF0000" v-if="!email"> *Necesario,  </span>
-            <span style="color:#FF0000" v-if="email"> ,*Formato Incorrecto, </span>
-            <input type="text" id="email" placeholder="prueba@gmail.com" class="form-control" v-model="email" @blur="correct">
+            <v-text-field type="text" id="email" label = "Email" v-model="email"></v-text-field>
+            <span align="left" v-if="!email" style="color:#FF0000;"> *Necesario</span>
+            <p align="left"> *formato correcto: ejemplo@gmail.com </p>
 
             <v-text-field label = "Contraseña" v-model="password" type="password"></v-text-field>
-            <span style="color:#FF0000" v-if="!password"> *Necesario</span>
+            <span v-if="!password" style="color:#FF0000;"> *Necesario</span>
 
-            <v-text-field label = "Nombre" v-model="name"></v-text-field>
-            <span style="color:#FF0000" v-if="!name"> *Necesario</span>
-            <input type="name" id="name" class="form-control" v-model="name">
-
+            <v-text-field label = "Nombre" v-model="first_name"></v-text-field>
+            <v-text-field label = "Apellido" v-model="last_name"></v-text-field>
             <br>
-            <v-select class="drop-down-conf" v-model="type" label="Tipo de usuario" :items="items" ></v-select>
+            <v-select class="drop-down-conf" v-model="role" label="Tipo de usuario" :items="items" ></v-select>
             <br>
-            <v-btn depressed dark class="orange font-weight-bold" v-on:click="ingreso()">Registrarme</v-btn>
+            <v-btn depressed dark class="orange font-weight-bold" v-on:click="register()">Registrarme</v-btn>
             <br>
             </div>
           </v-layout>
@@ -42,41 +39,31 @@
                 msg: 'Registrar nueva cuenta',
                 email: '',
                 password: '',
-                type: '',
-                name: '',
+                first_name: '',
+                last_name: '',
+                role: '',
                 items:['Administrador','Estudiante','Encargado de círculo/Maestro']
             }
         },
-
-
         methods: {
-            correct: function(){
-                var texto = $("#email").val();
-                var at = texto.indexOf('@');
-                var point = texto.indexOf('.');
-                if (at == -1 || point == -1){
-                    this.email = true;
-                }else{
-                    this.email = false;
-                }
-            },
-
             navigate() {
-
                 router.push({ name: "LogIn" });
             },
-            ingreso() {
-                /*try {
-                AuthenticationService.signup({
-                email: "preuba@gmail.com",
-                password: "12345",
-                name: "juanito",
-                type: "Estudiante"
+            async register() {
+                try {
+                const response = AuthenticationService.register({
+                email: this.email,
+                password: this.password,
+                first_name: this.first_name,
+                last_name: this.last_name,
+                role: this.role
                 })
+                console.log(response.data)
                 } catch (error) {
-                    this.error = error.response.data.error
-                }*/
-                router.push({name: "StudentHome"});
+                    console.log(error.data)
+                }
+
+                //router.push({name: "StudentHome"});
                 //estos son los datos pero idk como mandarlos a express
                 //this.email;
                 //this.password;
@@ -85,36 +72,6 @@
             }
         }
     }
-</script>
-
-<script type="text/javascript">
-function validar(campo)
-{
-   
-        if(campo.name.value.length == 0)
-        {
-                campo.name.focus();   
-                alert("llenar el nombre");
-                return false;
-        }
- if(campo.email.value.length == 0)
-        {
-                campo.email.focus();   
-                alert("llenar el Emeil");
-                return false;
-        }
-        
- if(campo.password.value.length == 0)
-        {
-                campo.password.focus();   
-                alert("llenar el Sexo");
-                return false;
-        }        
-        return true;
-    
-}
- 
- 
 </script>
 
 <style scoped>
